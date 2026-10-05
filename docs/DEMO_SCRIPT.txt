@@ -1,0 +1,40 @@
+GOVMIND / HISOBCHI — DEMO-VIDEO SSENARIYSI
+Maqsad: 3–4 daqiqa; mashq qilib, yakuniy videoni 1–5 daqiqa orasida saqlang.
+Sayt: https://76.13.248.238/pitch
+
+0:00–0:35 — MUAMMO
+Ekran: /pitch, Muammo → Yechim.
+“Assalomu alaykum. Men Muhammadiso Jo‘rayev, GovMind asoschisiman. Davlat xizmatidan foydalanishdan oldin qancha to‘lashimizni bilmoqchimiz. Lekin kerakli narxni topish, ma’lumot yangiligini tekshirish va uni o‘z holatimizga qo‘llash qiyin bo‘lishi mumkin. Mening kuzatuvimda, odamlar bu savolga ko‘pincha idoraga borgach javob topadi. Bu muammo fuqaro, davlat tashkiloti xodimi, advokat va mijozga xizmat ko‘rsatayotgan korxonaga ham tegishli.”
+
+0:35–1:05 — PLATFORMA G‘OYASI
+Ekran: Platforma va Kimlar uchun bo‘limlari.
+“Hisobchi — davlat to‘lovlari bo‘yicha qidiruv va hisoblash platformasi. Maqsadimiz: xizmatni topish, shaxsiy holatni aniqlash, to‘lovni hisoblash va huquqiy manbasini bir joyda ko‘rsatish. Lex.uzdagi ochiq qonunchilik hujjatlari va boshqa rasmiy manbalardagi qoidalarni tartiblab, tekshiriladigan modullarga aylantirmoqchimiz. Hozir keng huquqiy qidiruv tayyor emas. Birinchi ishlaydigan modul — tug‘ilganlik guvohnomasi.”
+
+1:05–1:45 — ISHLAYDIGAN PROTOTIP
+Ekran: Prototipni sinash → birinchi guvohnoma → onlayn murojaat → Hisoblash.
+“Vaziyat va murojaat usulini tanlayman. Hisobchi natijani to‘lov qismlariga ajratadi. Pastda formula, qo‘llangan BHM va manba havolalari bor. Natija qayerdan kelganini tekshirish mumkin. Huquqiy tekshiruv talab qilinadigan holat ham yashirilmaydi: bu prototip, rasmiy to‘lov kvitansiyasi emas.”
+Natijani ekranda ko‘rsatishga vaqt ajrating.
+
+1:45–2:15 — HOLATGA MOS HISOB
+Ekran: takroriy guvohnoma → hisoblash → saqlash va nusxalash.
+“Endi takroriy guvohnomani tanlayman. To‘lov tarkibi o‘zgaradi. Xizmat nomi bir xil bo‘lsa ham, vaziyat boshqa bo‘lishi mumkin. Natijani saqlash, ulashish yoki chop etish mumkin. Noma’lum yetkazib berish xarajatlari bo‘lsa, ular alohida ko‘rsatiladi.”
+
+2:15–2:50 — KENGAYISH
+Ekran: Yo‘l xaritasi va Amalga oshirish.
+“Guvohnoma — boshlanishi. Maqsadimiz — davlat to‘lovlariga oid kamida 45 ta kalkulyator: sud, notarius, avtomobil, uy-joy, soliq, bojxona va boshqa yo‘nalishlar. Avval eng zarur xizmatlarni foydalanuvchilar bilan aniqlaymiz. Har bir modulning qoidasi va manbasi tekshirilishi, stavka o‘zgarsa qayta ko‘rib chiqilishi kerak. Hozir 45 ta modul tayyor emas.”
+
+2:50–3:25 — BIZNES MODELI
+Ekran: Biznes modeli bo‘limidagi uchta karta.
+“Asosiy qidiruv va ommabop hisoblashlar bepul bo‘lishi rejalashtirilgan. Murakkab professional hisoblar uchun pullik imkoniyatlar ko‘zda tutilgan. Advokatlik tuzilmalari, davlat tashkilotlari va xususiy korxonalar uchun ularning ish jarayoniga mos hisoblagichlar va API integratsiyasini oylik obuna asosida sinab ko‘rmoqchimiz. Tarif va talabni pilotlar orqali tekshiramiz.”
+
+3:25–4:00 — TEXNOLOGIYA VA JAMOA
+Ekran: Jamoa, AI bo‘limi va /api-access.
+“Hozir yakka asoschi va full-stack dasturchi sifatida ishlayapman. Prototip Next.js, TypeScript, Zod va Decimal.js asosida qurilgan. Codex kod va testlarda yordamchi bo‘ldi. Kelgusida AI savolni tushunish va manbaga tayangan qidiruv uchun sinovdan o‘tkaziladi; summalar tekshirilgan qoidalar orqali hisoblanishi kerak. Keyingi qadam — foydalanuvchi suhbatlari, huquqiy tekshiruv va ustuvor modullar. Odam xizmatga borishdan oldin xarajatini tushuna olishini istaymiz. Rahmat.”
+
+ESLATMALAR
+- “90 foiz”ni tadqiqotsiz statistik fakt sifatida aytmang.
+- Rejadagi 45+ modul, AI qidiruvi va obunani bugun ishlayotgan deb ko‘rsatmang.
+- Parol, SSH kaliti, jamoa kodi va shaxsiy fayllar ekranda ko‘rinmasin.
+- Videodagi summa aynan prototipda ko‘ringan summaga mos bo‘lsin.
+- Videoni mashq qiling; 5 daqiqadan oshsa takroriy gaplarni qisqartiring.
+- Tayyor video havolasi DEMO_VIDEO_URL orqali build vaqtida ulanadi.

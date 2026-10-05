@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew Hisobchi IP HTTPS certificate
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/govcalc/certbot/bin/certbot renew --quiet --config-dir /etc/govcalc/letsencrypt --work-dir /var/lib/govcalc-acme --logs-dir /var/log/govcalc-acme --deploy-hook "/usr/sbin/nginx -t && /bin/systemctl reload nginx"

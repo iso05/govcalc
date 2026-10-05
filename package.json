@@ -1,0 +1,27 @@
+{
+  "name": "govcalc-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GovCalc — Official calculation platform for Uzbekistan",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "tests"
+  ],
+  "scripts": {
+    "build": "npm run build -w @govcalc/types && npm run build -w @govcalc/config && npm run build -w @govcalc/validation && npm run build -w @govcalc/ui && npm run build -w @govcalc/calculators && npm run build -w @govcalc/api && npm run build -w @govcalc/web",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "dev": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run start:dev --workspace=apps/api",
+    "dev:all": "npm run dev --workspaces"
+  },
+  "overrides": {
+    "postcss": "8.5.29"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.13",
+    "typescript": "^5.7.3"
+  }
+}

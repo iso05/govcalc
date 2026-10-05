@@ -1,0 +1,239 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model SystemSetting {
+  id            String    @id @default(uuid())
+  key           String    @unique
+  value         Decimal   @db.Decimal(18, 2)
+  currency      String    @default("UZS")
+  description   String?
+  effectiveFrom DateTime
+  effectiveTo   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("system_settings")
+}
+
+model Category {
+  id            String       @id @default(uuid())
+  slug          String       @unique
+  nameUz        String
+  nameRu        String?
+  nameEn        String?
+  descriptionUz String?
+  descriptionRu String?
+  descriptionEn String?
+  icon          String
+  sortOrder     Int          @default(0)
+  isActive      Boolean      @default(true)
+  calculators   Calculator[]
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@map("categories")
+}
+
+enum CalculatorStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+  UNDER_REVIEW
+}
+
+model Calculator {
+  id               String              @id @default(uuid())
+  slug             String              @unique
+  code             String              @unique
+  nameUz           String
+  nameRu           String?
+  nameEn           String?
+  descriptionUz    String
+  descriptionRu    String?
+  descriptionEn    String?
+  categoryId       String
+  category         Category            @relation(fields: [categoryId], references: [id])
+  isPremium        Boolean             @default(false)
+  premiumPrice     Decimal?            @db.Decimal(18, 2)
+  estimatedMinutes Int                 @default(2)
+  status           CalculatorStatus    @default(DRAFT)
+  versions         CalculatorVersion[]
+  calculations     Calculation[]
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+
+  @@index([categoryId])
+  @@index([slug])
+  @@map("calculators")
+}
+
+model CalculatorVersion {
+  id                   String                         @id @default(uuid())
+  calculatorId         String
+  calculator           Calculator                     @relation(fields: [calculatorId], references: [id], onDelete: Cascade)
+  versionNumber        Int
+  versionCode          String                         @unique
+  effectiveFrom        DateTime
+  effectiveTo          DateTime?
+  isActive             Boolean                        @default(true)
+  formulaDescriptionUz String
+  notesUz              String?
+  inputs               CalculatorInput[]
+  legalSources         CalculatorVersionLegalSource[]
+  calculations         Calculation[]
+  createdAt            DateTime                       @default(now())
+  updatedAt            DateTime                       @updatedAt
+
+  @@unique([calculatorId, versionNumber])
+  @@map("calculator_versions")
+}
+
+enum InputType {
+  NUMBER
+  CURRENCY
+  SELECT
+  RADIO
+  CHECKBOX
+  DATE
+}
+
+model CalculatorInput {
+  id                  String            @id @default(uuid())
+  calculatorVersionId String
+  calculatorVersion   CalculatorVersion @relation(fields: [calculatorVersionId], references: [id], onDelete: Cascade)
+  key                 String
+  labelUz             String
+  labelRu             String?
+  labelEn             String?
+  inputType           InputType
+  defaultValue        String?
+  placeholderUz       String?
+  helpTextUz          String?
+  isRequired          Boolean           @default(true)
+  validationRules     Json
+  options             Json?
+  sortOrder           Int               @default(0)
+
+  @@unique([calculatorVersionId, key])
+  @@map("calculator_inputs")
+}
+
+enum LegalVerificationStatus {
+  VERIFIED
+  NEEDS_REVIEW
+  CONFLICT_DETECTED
+}
+
+model LegalSource {
+  id                 String                         @id @default(uuid())
+  code               String                         @unique
+  titleUz            String
+  documentType       String
+  documentNumber     String
+  publicationDate    DateTime
+  effectiveDate      DateTime
+  officialUrl        String
+  articleParagraph   String
+  verificationStatus LegalVerificationStatus        @default(VERIFIED)
+  lastVerifiedAt     DateTime                       @default(now())
+  conflictNotes      String?
+  calculatorVersions CalculatorVersionLegalSource[]
+  createdAt          DateTime                       @default(now())
+  updatedAt          DateTime                       @updatedAt
+
+  @@map("legal_sources")
+}
+
+model CalculatorVersionLegalSource {
+  calculatorVersionId String
+  legalSourceId       String
+  calculatorVersion   CalculatorVersion @relation(fields: [calculatorVersionId], references: [id], onDelete: Cascade)
+  legalSource         LegalSource       @relation(fields: [legalSourceId], references: [id], onDelete: Cascade)
+
+  @@id([calculatorVersionId, legalSourceId])
+  @@map("calculator_version_legal_sources")
+}
+
+enum CalculationAccessStatus {
+  FREE_FULL
+  PREVIEW_LOCKED
+  PREVIEW_UNLOCKED
+}
+
+model Calculation {
+  id                  String                  @id @default(uuid())
+  calculatorId        String
+  calculator          Calculator              @relation(fields: [calculatorId], references: [id])
+  calculatorVersionId String
+  calculatorVersion   CalculatorVersion       @relation(fields: [calculatorVersionId], references: [id])
+  userId              String?
+  user                User?                   @relation(fields: [userId], references: [id])
+  sessionId           String?
+  inputsProvided      Json
+  accessStatus        CalculationAccessStatus @default(FREE_FULL)
+  result              CalculationResult?
+  createdAt           DateTime                @default(now())
+
+  @@index([calculatorId])
+  @@index([userId])
+  @@index([sessionId])
+  @@map("calculations")
+}
+
+model CalculationResult {
+  id              String            @id @default(uuid())
+  calculationId   String            @unique
+  calculation     Calculation       @relation(fields: [calculationId], references: [id], onDelete: Cascade)
+  totalAmount     Decimal           @db.Decimal(18, 2)
+  currency        String            @default("UZS")
+  formulaSummary  String
+  systemRatesUsed Json
+  items           CalculationItem[]
+  createdAt       DateTime          @default(now())
+
+  @@map("calculation_results")
+}
+
+model CalculationItem {
+  id                  String            @id @default(uuid())
+  calculationResultId String
+  calculationResult   CalculationResult @relation(fields: [calculationResultId], references: [id], onDelete: Cascade)
+  titleUz             String
+  descriptionUz       String?
+  baseRateAmount      Decimal           @db.Decimal(18, 2)
+  multiplier          Decimal           @db.Decimal(18, 4)
+  itemTotalAmount     Decimal           @db.Decimal(18, 2)
+  legalCitation       String?
+  sortOrder           Int               @default(0)
+
+  @@map("calculation_items")
+}
+
+enum UserRole {
+  CITIZEN
+  ENTREPRENEUR
+  ACCOUNTANT
+  LAWYER
+  ADMIN
+  SUPERADMIN
+}
+
+model User {
+  id           String        @id @default(uuid())
+  phoneNumber  String        @unique
+  fullName     String?
+  role         UserRole      @default(CITIZEN)
+  email        String?       @unique
+  passwordHash String?
+  calculations Calculation[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@map("users")
+}

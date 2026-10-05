@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@govcalc/types": ["packages/types/src/index.ts"],
+      "@govcalc/types/*": ["packages/types/src/*"],
+      "@govcalc/ui": ["packages/ui/src/index.ts"],
+      "@govcalc/ui/*": ["packages/ui/src/*"],
+      "@govcalc/validation": ["packages/validation/src/index.ts"],
+      "@govcalc/validation/*": ["packages/validation/src/*"],
+      "@govcalc/calculators": ["packages/calculators/src/index.ts"],
+      "@govcalc/calculators/*": ["packages/calculators/src/*"],
+      "@govcalc/config": ["packages/config/src/index.ts"],
+      "@govcalc/config/*": ["packages/config/src/*"]
+    }
+  }
+}
