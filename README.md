@@ -5,7 +5,9 @@ Davlat xizmatlari narxini topish, shaxsiy holatga mos hisoblash va huquqiy manba
 ## Holat
 Birinchi ishlaydigan modul: tug‘ilganlik guvohnomasi (GOV-001). Maqsad — davlat to‘lovlari bo‘yicha 45+ kalkulyator, keng huquqiy qidiruv, bepul va pullik imkoniyatlar hamda tashkilotlar uchun moslashtirilgan hisoblagichlarga oylik obuna. Bu kengayish rejalari; hozir tijoriy tariflar va to‘liq huquqiy qidiruv ishga tushmagan. Auditoriya: fuqarolar, davlat tashkilotlari, advokatlik tuzilmalari va xususiy xizmat ko‘rsatuvchi korxonalar. Lex.uz va my.gov.uz birlamchi manba havolalari sifatida ishlatiladi.
 
-Ommaviy prototip: https://76.13.248.238/pitch
+Ommaviy prototip: https://hisobchi.76-13-248-238.sslip.io/pitch
+
+IP havolasi ham saqlangan: https://76.13.248.238/pitch. Nomli manzil uchun alohida HTTPS sertifikati mavjud; video va API joriy sayt manzili orqali yuklanadi.
 
 ![Hisobchi: muammo va yechim taqdimoti](docs/images/pitch.png)
 

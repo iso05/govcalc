@@ -21,7 +21,7 @@ Sana: 2026-10-05. Mahsulot: Hisobchi. Jamoa: GovMind, 1 kishi. Asoschi: Muhammad
 - [x] 1–5 daqiqalik haqiqiy demo-video: 4:36, /demo sahifasida ochiq player
 - [x] Video manzili sozlandi va sayt qayta yig‘ildi
 - [x] Video qo‘shilgach tashqi tarmoq orqali desktop va mobil navigatsiya, kalkulyator hamda MP4 qisman yuklash tekshirildi
-- [ ] Botga ommaviy /pitch havolasini yuborish
+- [ ] Botga to‘liq nomli havolani yuborish: https://hisobchi.76-13-248-238.sslip.io/pitch
 - [ ] Joriy BHMning hujjati, kuchga kirish sanasi va murakkab imtiyozlarni huquqiy tekshirish; ungacha natijalarni prototip deb belgilash
 
 Siz bergan muddat: 11-oktabr, 23:59:59 (GMT+5). Ichki maqsad: 10-oktabrgacha video va deploy, 11-oktabrda yakuniy tekshiruv.

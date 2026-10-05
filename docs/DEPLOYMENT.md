@@ -1,6 +1,17 @@
 # Hisobchi demo saytini joylashtirish
 
-## Amaldagi VPS deploy — 2026-10-05
+## Ommaviy nomli havola — 2026-10-06
+
+- Asosiy taqdimot: https://hisobchi.76-13-248-238.sslip.io/pitch
+- Demo: https://hisobchi.76-13-248-238.sslip.io/demo
+- IP orqali kirish ham saqlangan. `sslip.io` ommaviy DNS xizmati nomni VPS IP manziliga yo‘naltiradi; bu alohida sotib olingan domen emas.
+- Qo‘shimcha Nginx vhost: `deploy/govcalc-hostname.nginx`; u `govcalc.nginx` ichidagi mavjud limit zonalaridan foydalanadi. Ikkalasi birga yoqilgan bo‘lishi kerak.
+- Sertifikat: `/etc/govcalc/letsencrypt/live/govcalc-hostname/`; mavjud `govcalc-cert-renew.timer` shu konfiguratsiyadagi ikkala sertifikatni yangilaydi.
+- Release: `/opt/govcalc/releases/20261006-hostname`; qaytarish ma’lumotlari `/root/govcalc-backups/20261006-hostname` ichida.
+- Standart video havolasi `/media/hisobchi-demo-20261005.mp4`: sayt qaysi ruxsat etilgan manzilda ochilsa, video ham o‘sha manzildan yuklanadi. `DEMO_VIDEO_URL` bo‘sh qoldiriladi.
+- 2026-10-06 tekshiruvida IP manzili besh tashqi tekshiruv nuqtasidan HTTP 200 qaytardi; ayrim qurilmalarda bildirilgan timeout umumiy server yopiq ekanini ko‘rsatmadi. Nomli havola xato bo‘lgan qurilmada ochilganini foydalanuvchi tasdiqladi. Nomli manzilning tashqi tekshiruvida 4/5 nuqta HTTP 200, bir nuqta timeout qaytardi; barcha tarmoqlarda ulanish kafolatlanmaydi.
+
+## Dastlabki VPS deploy — 2026-10-05
 
 - Taqdimot: https://76.13.248.238/pitch
 - Demo: https://76.13.248.238/demo
