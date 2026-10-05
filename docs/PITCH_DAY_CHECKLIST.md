@@ -18,9 +18,9 @@ Sana: 2026-10-05. Mahsulot: Hisobchi. Jamoa: GovMind, 1 kishi. Asoschi: Muhammad
 - [x] Tashqi tarmoq orqali sayt, hisoblash va mobil ko‘rinish tekshirilgan
 
 ## Topshirishni tugatish uchun qolgan
-- [ ] 1–5 daqiqalik haqiqiy demo-videoni yozish va ochiq tomosha havolasini olish
-- [ ] DEMO_VIDEO_URL ni o‘rnatib qayta yig‘ish
-- [ ] Video qo‘shilgach tashqi tarmoq orqali topshirishdan oldingi tekshiruv
+- [x] 1–5 daqiqalik haqiqiy demo-video: 4:36, /demo sahifasida ochiq player
+- [x] Video manzili sozlandi va sayt qayta yig‘ildi
+- [x] Video qo‘shilgach tashqi tarmoq orqali desktop va mobil navigatsiya, kalkulyator hamda MP4 qisman yuklash tekshirildi
 - [ ] Botga ommaviy /pitch havolasini yuborish
 - [ ] Joriy BHMning hujjati, kuchga kirish sanasi va murakkab imtiyozlarni huquqiy tekshirish; ungacha natijalarni prototip deb belgilash
 

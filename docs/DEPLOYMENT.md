@@ -28,6 +28,17 @@ Keyingi versiyani alohida build papkasida `npm ci --ignore-scripts` bilan yig‘
 
 Serverda oldindan mavjud `reboot-required` holati bor. Boshqa xizmatlar bilan kelishilgan texnik xizmat vaqtida qayta yuklang. Bu deploy serverni qayta yuklamaydi.
 
+## Demo-video — 2026-10-05
+
+- `/demo` sahifasida 4:36 davomiylikdagi H.264/AAC, 1280×720 video joylangan.
+- MP4: `https://76.13.248.238/media/hisobchi-demo-20261005.mp4`.
+- Poster: `/media/hisobchi-demo-20261005.jpg`.
+- Media fayllari `/var/www/govcalc-media/` ichida root egasida, 644 huquqi bilan saqlanadi. Nginx `/media/` orqali ularni bevosita beradi; qisman yuklash va video ichida oldinga o‘tish qo‘llab-quvvatlanadi. Papka ro‘yxatini ko‘rsatish o‘chirilgan.
+- MP4ning boshlanish metama’lumotlari fayl boshiga ko‘chirilgan (`faststart`); tasvir va audio qayta kodlanmagan.
+- Release: `/opt/govcalc/releases/20261005-video`. Oldingi release va Nginx sozlamalari `/root/govcalc-backups/20261005-video` orqali qaytarilishi mumkin.
+- Standart video URL `apps/web/lib/pitch.ts` da. `DEMO_VIDEO_URL` orqali almashtirish mumkin; keyin qayta build talab qilinadi.
+- Video va poster Git repoga kiritilmagan. Yangi serverga ko‘chirganda `/var/www/govcalc-media/` fayllarini alohida nusxalang.
+
 ## Ishlaydigan variant
 Bu loyiha Node.js bilan Next.js server sifatida ishlaydi. Frontend va /api/v1 bir xizmat ichida. /pitch sahifasi botga yuboriladigan asosiy taqdimot manzili bo‘lishi mumkin.
 

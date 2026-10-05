@@ -15,7 +15,8 @@ test('pitch requirements and mobile navigation remain accessible', async ({ page
     await page.getByRole('navigation', { name: 'Asosiy navigatsiya' }).getByRole('link', { name: 'Demo', exact: true }).click();
   }
   await expect(page).toHaveURL(/\/demo$/);
-  await expect(page.getByRole('heading', { name: 'Demo-video hali joylanmagan' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Hisobchi — loyiha va jonli demo' })).toBeVisible();
+  await expect(page.getByLabel('Hisobchi demo-videosi')).toBeVisible();
   await page.getByRole('link', { name: 'Kalkulyatorni ochish' }).click();
   await page.locator('#calculate-submit-btn').click();
   await expect(page.getByText('Hisoblash formulasi', { exact: true }).first()).toBeVisible();

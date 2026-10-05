@@ -38,5 +38,5 @@ Rivojlantirish: birinchi yig‘ishdan so‘ng npm run dev.
 E2E testlari 390px mobil va 1280px desktop ko‘rinishlarini tekshiradi. Brauzer o‘rnatilmagan muhitda Playwright Chromium kerak bo‘ladi.
 
 ## Topshirishdan oldin
-docs/DEPLOYMENT.md, docs/PITCH_DAY_CHECKLIST.md va docs/DEMO_SCRIPT.txt ni ko‘ring. Ommaviy HTTPS hosting ishlayapti; demo-videoni tayyorlab ulash kerak.
+docs/DEPLOYMENT.md, docs/PITCH_DAY_CHECKLIST.md va docs/DEMO_SCRIPT.txt ni ko‘ring. Ommaviy HTTPS hosting va 4:36 davomiylikdagi demo-video tayyor: https://76.13.248.238/demo. Video VPSda alohida saqlanadi; katta media fayli Git tarixiga kiritilmagan.
 

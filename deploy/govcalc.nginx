@@ -52,6 +52,12 @@ server {
     proxy_read_timeout 30s;
 
     location ~ /\. { deny all; }
+    location /media/ {
+        alias /var/www/govcalc-media/;
+        autoindex off;
+        limit_except GET { deny all; }
+        expires 7d;
+    }
     location /api/ {
         client_max_body_size 16k;
         limit_req zone=govcalc_api burst=20 nodelay;
